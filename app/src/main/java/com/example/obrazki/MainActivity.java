@@ -117,6 +117,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        numberSpinnerFull.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String choosenIndex = adapterView.getItemAtPosition(i).toString();
+                Toast.makeText(MainActivity.this, choosenIndex, Toast.LENGTH_SHORT).show();
+                choosenImageView.setImageResource(pictures.get(i));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         numberSpinnerFull.setAdapter(adapterForSpinner);
     }
 }
